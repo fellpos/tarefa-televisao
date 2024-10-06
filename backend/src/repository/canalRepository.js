@@ -23,6 +23,7 @@ export async function consultarCanais() {
 
     let resposta = await con.query(comando);
     let registros = resposta[0];
+    console.log(registros)
 
     return registros;
 }

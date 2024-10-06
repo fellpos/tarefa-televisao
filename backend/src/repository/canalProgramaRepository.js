@@ -14,13 +14,13 @@ export async function inserirCanalProg(canalProgam) {
 
 export async function consultarCanaisProg() {
     let comando = `
-        SELECT id_canal_programa     id,
-                nm_canal            canal,
-                nm_programa         nome_programa,
-                ds_genero           genero,
-                hr_programa         horario
-          FROM  tb_canal_programa
-          INNER JOIN tb_canal on tb_canal_programa.id_canal = tb_canal.id_canal
+       SELECT   id_canal_programa		id,
+                nm_canal				canal,
+                nm_programa         	nome_programa,
+                ds_genero           	genero,
+                hr_programa         	horario
+        FROM    tb_canal_programa
+        INNER JOIN tb_canal on tb_canal_programa.id_canal = tb_canal.id_canal
     `
 
     let resposta = await con.query(comando);
