@@ -12,7 +12,7 @@ export async function inserirCanalProg(canalProgam) {
     return info.insertId;
 }
 
-export async function consultarCanaisProg() {
+export async function consultarCanalProg() {
     let comando = `
        SELECT   id_canal_programa		id,
                 nm_canal				canal,
@@ -27,6 +27,26 @@ export async function consultarCanaisProg() {
     let registros = resposta[0];
 
     return registros;
+}
+
+export async function consultarCanalProgId(id) {
+    let comando = `
+       SELECT   id_canal_programa		id,
+                nm_canal				canal,
+                nm_programa         	nome_programa,
+                ds_genero           	genero,
+                hr_programa         	horario
+        FROM    tb_canal_programa
+        INNER JOIN tb_canal on tb_canal_programa.id_canal = tb_canal.id_canal
+        WHERE id_canal_programa = ?
+    `
+
+    let resposta = await con.query(comando, [id]);
+    let registros = resposta[0];
+    console.log(registros);
+    console.log('entrou');
+
+    return registros[0];
 }
 
 export async function alterarCanal(canalProgam, id) {

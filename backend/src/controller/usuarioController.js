@@ -33,6 +33,21 @@ endpoints.get('/usuario', async (req,resp) => {
     }
 })
 
+endpoints.get('/usuario/:id', async (req,resp) => {
+    try {
+        let id = req.params.id;
+        let registros = await db.consultarUserIdService(id);
+
+        resp.send(registros);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+        console.log(err.message);
+    }
+})
+
 endpoints.put('/usuario/:id', async (req,resp) => {
     try {
         let id = req.params.id

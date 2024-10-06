@@ -3,9 +3,24 @@ import * as db from '../service/canalProgamaService.js';
 const endpoints = Router()
 
 
-endpoints.get('/canal/programa', async (req, resp) => {
+endpoints.get('/programa', async (req, resp) => {
     try {
         let registros = await db.consultarService()
+
+        resp.send(registros)
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+        console.log(err.message);
+    }
+})
+
+endpoints.get('/canal/programa/:id', async (req, resp) => {
+    try {
+        let id = req.params.id;
+        let registros = await db.consultarCanaProgIdService(id)
 
         resp.send(registros)
     }

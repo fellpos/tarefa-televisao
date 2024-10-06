@@ -78,8 +78,10 @@ export default function Canal() {
 
     return (
         <div className="pagina-canal">
-            <h1 className='titulo'>Canal</h1>
-            <h1>id: {id}</h1>
+            <h1 className='titulo'>Tabela Canal</h1>
+            <h1><Link to={'/'}> voltar</Link></h1>
+
+            <h1>id: {editando ? id : 'Nenhum Canal Selecionado'}</h1>
 
             <section>
 

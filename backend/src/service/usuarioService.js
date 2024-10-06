@@ -12,6 +12,12 @@ export async function consultarUserService() {
     return registros;
 }
 
+export async function consultarUserIdService(id) {
+    let registros = await db.consultarUserId(id);
+
+    return registros;
+}
+
 export async function alterarUserService(user, id) {
     let linhasAfetadas = await db.alterarUser(user, id);
 

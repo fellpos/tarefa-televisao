@@ -7,7 +7,13 @@ export async function inserirService(canalProgam) {
 }
 
 export async function consultarService() {
-    let registros = await db.consultarCanaisProg()
+    let registros = await db.consultarCanalProg()
+
+    return registros;
+}
+
+export async function consultarCanaProgIdService(id) {
+    let registros = await db.consultarCanalProgId(id)
 
     return registros;
 }
