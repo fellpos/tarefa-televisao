@@ -43,8 +43,6 @@ export async function consultarCanalProgId(id) {
 
     let resposta = await con.query(comando, [id]);
     let registros = resposta[0];
-    console.log(registros);
-    console.log('entrou');
 
     return registros[0];
 }

@@ -68,7 +68,7 @@ export default function Usuario() {
 
 
     return (
-        <div className="pagina-canal-programa">
+        <div className="pagina-usuario">
             <h1 className='titulo'>Tabela Usuário</h1>
             <h1><Link to={'/'}> voltar</Link></h1>
 

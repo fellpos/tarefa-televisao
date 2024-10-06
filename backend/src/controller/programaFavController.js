@@ -3,7 +3,7 @@ import * as db from '../service/programaFavService.js';
 
 const endpoints = Router();
 
-endpoints.post('/canal/programa/fav', async (req, resp) => {
+endpoints.post('/fav', async (req, resp) => {
     try {
         let favorito = req.body;
         let id = await db.inserirFavService(favorito);
@@ -19,7 +19,7 @@ endpoints.post('/canal/programa/fav', async (req, resp) => {
     }
 })
 
-endpoints.get('/canal/programa/fav', async (req,resp) => {
+endpoints.get('/fav', async (req,resp) => {
     try {
         let registros = await db.consultarFavService();
 
@@ -33,7 +33,22 @@ endpoints.get('/canal/programa/fav', async (req,resp) => {
     }
 })
 
-endpoints.put('/canal/programa/fav/:id', async (req, resp) => {
+endpoints.get('/fav/:id', async (req,resp) => {
+    try {
+        let id = req.params.id
+        let registros = await db.consultarFavIdService(id);
+
+        resp.send(registros);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+        console.log(err.message);
+    }
+})
+
+endpoints.put('/fav/:id', async (req, resp) => {
     try {
         let id = req.params.id
         let favorito = req.body;
@@ -49,7 +64,7 @@ endpoints.put('/canal/programa/fav/:id', async (req, resp) => {
     }
 })
 
-endpoints.delete('/canal/programa/fav/:id', async (req, resp) => {
+endpoints.delete('/fav/:id', async (req, resp) => {
     try {
         let id = req.params.id
         

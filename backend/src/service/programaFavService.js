@@ -12,6 +12,12 @@ export async function consultarFavService() {
     return registros;
 }
 
+export async function consultarFavIdService(id) {
+    let registros = await db.consultarFavId(id);
+    
+    return registros;
+}
+
 export async function alterarService(favorito, id) {
     let linhasAfetadas = await db.alterarFav(favorito, id);
     if (linhasAfetadas <= 0) 

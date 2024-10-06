@@ -21,8 +21,8 @@ export default function Navegacao() {
                 <Route path="/usuario" element={<Usuario />} />
                 <Route path="/usuario/:id" element={<Usuario />} />
 
-                <Route path="/canal/programa/fav" element={<Favorito />} />
-                <Route path="/canal/programa/fav/:id" element={<Favorito />} />
+                <Route path="/favorito" element={<Favorito />} />
+                <Route path="/favorito/:id" element={<Favorito />} />
             </Routes>
         </BrowserRouter>
     )

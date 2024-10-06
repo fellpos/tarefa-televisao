@@ -1,3 +1,35 @@
 .pagina-usuario {
 
+    .titulo {
+        text-align: center;
+    }
+
+    form {
+        margin: 50px
+    }
+
+    button {
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .tabela {
+        margin-left: 50px;
+
+
+    }
+
+    td {
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+
+        .deletar {
+            cursor: hand;
+        }
+    }
+
+    th {
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+    }
 }

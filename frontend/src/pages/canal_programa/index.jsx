@@ -66,7 +66,7 @@ export default function CanalPrograma() {
             setIdCanal(resposta.data.id);
             setNome(resposta.data.canal);
             setGenero(resposta.data.genero);
-            setHorario(resposta.data.hoario);
+            setHorario(resposta.data.horario);
             setEditando(true)
         }
     }
