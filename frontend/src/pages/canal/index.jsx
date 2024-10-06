@@ -49,7 +49,7 @@ export default function Canal() {
 
             setTelevisao(resposta.data);
             setEditando(false)
-        } 
+        }
         else {
             let url = `http://localhost:7777/canal/${id}`;
             let resposta = await axios.get(url);
@@ -59,7 +59,6 @@ export default function Canal() {
 
             setTelevisao(lista.data);
 
-
             setNome(resposta.data.nome);
             setNumero(resposta.data.numero);
             setAberto(resposta.data.aberto);
@@ -67,7 +66,7 @@ export default function Canal() {
         }
     }
 
-    async function deletar(id) {
+    async function deletar() {
         let url = `http://localhost:7777/canal/${id}`;
         let info = await axios.delete(url)
         alert(`Canal do Id: ${id} Deletado`)
@@ -75,8 +74,7 @@ export default function Canal() {
 
     useEffect(() => {
         buscar()
-
-    },[])
+    }, [])
 
     return (
         <div className="pagina-canal">
@@ -98,12 +96,14 @@ export default function Canal() {
                     </div>
                     <div>
                         <label>Aberto?</label>
-                        <input type="checkbox" value={aberto} onChange={e => setAberto(e.target.checked)} />
+                        <input type="checkbox" value={aberto ? true : false} onChange={e => setAberto(e.target.checked)} />
                     </div>
-                    
+
                     <button onClick={editando ? alterar : inserir}>{editando ? 'Alterar' : 'Inserir'}</button>
-                    <button onClick={deletar(id)}>deletar</button>
-                
+                    {editando &&
+                        <button onClick={deletar}>deletar</button>
+                    }
+
                 </form>
 
             </section>
@@ -113,6 +113,7 @@ export default function Canal() {
                 <button onClick={buscar}>Clique Aqui</button>
 
 
+                
                 <div className="tabela">
 
                     <table>
