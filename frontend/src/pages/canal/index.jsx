@@ -103,7 +103,7 @@ export default function Canal() {
                     </div>
                     <div>
                         <label>Aberto? :</label>
-                        <input type="radio" value={aberto} onChange={e => setAberto(e.target.checked)} />
+                        <input type="checkbox" value={aberto} onChange={e => setAberto(e.checked.value)} />
                     </div>
 
                     <button onClick={editando ? alterar : inserir}>{editando ? 'Alterar' : 'Inserir'}</button>
