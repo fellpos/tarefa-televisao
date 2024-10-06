@@ -78,7 +78,12 @@ export default function Canal() {
 
     return (
         <div className="pagina-canal">
-            <h1 className='titulo'>Tabela Canal</h1>
+            <h1 className='titulo'
+                style={{
+                    backgroundColor: '#1A2A5A',
+                    color: '#fff'
+                }}
+            >Tabela Canal</h1>
             <h1><Link to={'/'}> voltar</Link></h1>
 
             <h1>id: {editando ? id : 'Nenhum Canal Selecionado'}</h1>
@@ -89,16 +94,16 @@ export default function Canal() {
 
                 <form>
                     <div>
-                        <label>Nome</label>
+                        <label>Nome :</label>
                         <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
                     </div>
                     <div>
-                        <label>Número</label>
+                        <label>Número :</label>
                         <input type="text" value={numero} onChange={e => setNumero(e.target.value)} />
                     </div>
                     <div>
-                        <label>Aberto?</label>
-                        <input type="checkbox" value={aberto} onChange={e => setAberto(e.target.checked)} />
+                        <label>Aberto? :</label>
+                        <input type="radio" value={aberto} onChange={e => setAberto(e.target.checked)} />
                     </div>
 
                     <button onClick={editando ? alterar : inserir}>{editando ? 'Alterar' : 'Inserir'}</button>
@@ -112,10 +117,7 @@ export default function Canal() {
 
             <section>
                 <h1>Consultar</h1>
-                <button onClick={buscar}>Clique Aqui</button>
 
-
-                
                 <div className="tabela">
 
                     <table>

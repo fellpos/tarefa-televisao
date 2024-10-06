@@ -37,14 +37,14 @@ export default function CanalPrograma() {
             "nome": nome,
             "genero": genero,
             "horario": horario
-            }
-            
-            let url = `http://localhost:7777/canal/programa/${id}`
-            await axios.put(url, paramObj)
-            alert('Programa Alterado')
-            }
-            
-            
+        }
+
+        let url = `http://localhost:7777/canal/programa/${id}`
+        await axios.put(url, paramObj)
+        alert('Programa Alterado')
+    }
+
+
     async function buscar() {
         if (!id || isNaN(id)) {
             let url = `http://localhost:7777/programa`;
@@ -84,30 +84,34 @@ export default function CanalPrograma() {
 
     return (
         <div className="pagina-canal-programa">
-            <h1 className='titulo'>Tabela Canal Programa</h1>            
+            <h1 className='titulo' style={{
+                backgroundColor: '#A72235',
+                color: '#fff'
+            }}
+            >Tabela Canal Programa</h1>
             <h1><Link to={'/'}> voltar</Link></h1>
 
             <h1>id: {editando ? id : 'Nenhum Programa Selecionado'}</h1>
-            
+
             <section>
 
                 <h1>Inserir</h1>
 
                 <form>
                     <div>
-                        <label>Id do Canal</label>
+                        <label>Id do Canal :</label>
                         <input type="text" value={idCanal} onChange={e => setIdCanal(e.target.value)} />
                     </div>
                     <div>
-                        <label>Nome</label>
+                        <label>Nome :</label>
                         <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
                     </div>
                     <div>
-                        <label>Gênero</label>
+                        <label>Gênero :</label>
                         <input type="text" value={genero} onChange={e => setGenero(e.target.value)} />
                     </div>
                     <div>
-                        <label>Horário</label>
+                        <label>Horário :</label>
                         <input type="time" value={horario} onChange={e => setHorario(e.target.value)} />
                     </div>
 
@@ -121,10 +125,6 @@ export default function CanalPrograma() {
 
             <section>
                 <h1>Consultar</h1>
-                <button onClick={buscar}>Clique Aqui</button>
-
-
-                
                 <div className="tabela">
 
                     <table>

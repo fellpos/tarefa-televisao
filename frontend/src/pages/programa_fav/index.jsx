@@ -77,7 +77,10 @@ export default function Favorito() {
 
     return (
         <div className="pagina-favorito">
-            <h1 className='titulo'>Tabela Favorito</h1>
+            <h1 className='titulo' style={{
+                backgroundColor: '#F042FD',
+                color: '#fff'
+            }}>Tabela Favorito</h1>
             <h1><Link to={'/'}> voltar</Link></h1>
 
             <h1>id: {editando ? id : 'Nenhum Favorito Selecionado'}</h1>
@@ -88,15 +91,15 @@ export default function Favorito() {
 
                 <form>
                     <div>
-                        <label>ID do Usuário</label>
+                        <label>ID do Usuário :</label>
                         <input type="text" value={idUsuario} onChange={e => setIdUsuario(e.target.value)} />
                     </div>
                     <div>
-                        <label>ID do Programa</label>
+                        <label>ID do Programa :</label>
                         <input type="text" value={idCanalPrograma} onChange={e => setIdCanalPrograma(e.target.value)} />
                     </div>
                     <div>
-                        <label>Avaliação</label>
+                        <label>Avaliação :</label>
                         <input type="text" value={avaliacao} onChange={e => setAvaliacao(e.target.value)} />
                     </div>
 
@@ -109,9 +112,7 @@ export default function Favorito() {
             </section>
 
             <section>
-                <h1>Consultar</h1>
-                <button onClick={buscar}>Clique Aqui</button>
-
+                <h1>Consultar</h1> :
                 <div className="tabela">
 
                     <table>

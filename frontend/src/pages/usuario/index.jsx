@@ -69,7 +69,10 @@ export default function Usuario() {
 
     return (
         <div className="pagina-usuario">
-            <h1 className='titulo'>Tabela Usuário</h1>
+            <h1 className='titulo' style={{
+                backgroundColor: '#652D5E',
+                color: '#fff'
+            }}>Tabela Usuário</h1>
             <h1><Link to={'/'}> voltar</Link></h1>
 
             <h1>id: {editando ? id : 'Nenhum Usuario Selecionado'}</h1>
@@ -80,7 +83,7 @@ export default function Usuario() {
 
                 <form>
                     <div>
-                        <label>Nome</label>
+                        <label>Nome :</label>
                         <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
                     </div>
 
@@ -94,8 +97,6 @@ export default function Usuario() {
 
             <section>
                 <h1>Consultar</h1>
-                <button onClick={buscar}>Clique Aqui</button>
-
                 <div className="tabela">
 
                     <table>

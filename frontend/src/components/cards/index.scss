@@ -1,0 +1,17 @@
+.comps-card {
+    
+    border: 0px solid #000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    width: 300px;
+    margin: 70px 20px -40px;
+
+    a{
+        color: #fff;
+        text-decoration: underline !important;
+        font-weight: 600;
+    }
+}
